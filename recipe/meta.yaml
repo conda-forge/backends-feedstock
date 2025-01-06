@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/backends-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/backends-{{ version }}.tar.gz
   sha256: 04f1e766fb39b9420a3231417f10dcce019e8cbb5695b1f6fa14d9f31ec8db60
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=50.0
     - setuptools-scm >=6.0
     - setuptools_scm_git_archive
@@ -25,7 +25,7 @@ requirements:
     - cython >=0.29
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy >=1.16
     - scipy >=1.3
     - plum-dispatch >=2.3.5
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/wesselb/lab
