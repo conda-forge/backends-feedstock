@@ -1,5 +1,5 @@
 {% set name = "backends" %}
-{% set version = "1.7.1" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/backends-{{ version }}.tar.gz
-  sha256: 929fb48872a950b1194b14a40427e5a4469b3ea5cf421a3d95ff28f48b35c26f
+  sha256: 8a043fd1a6a90e7528b66b6a2f19c19c05080a00ee42df16ab2ff55f3144e82a
 
 build:
   noarch: python
