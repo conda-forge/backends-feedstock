@@ -1,5 +1,5 @@
 {% set name = "backends" %}
-{% set version = "1.8.0" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/backends-{{ version }}.tar.gz
-  sha256: 8a043fd1a6a90e7528b66b6a2f19c19c05080a00ee42df16ab2ff55f3144e82a
+  sha256: 94cfaad023f54f98d8999a1a561ca65451cf9d4af0d148f77e6cac1112f4c5e3
 
 build:
   noarch: python
@@ -18,7 +18,7 @@ requirements:
   host:
     - python {{ python_min }}
     - setuptools >=50.0
-    - setuptools-scm >=6.0, <8
+    - setuptools-scm >=6.0,<8
     - setuptools_scm_git_archive
     - wheel >=0.33
     - numpy >=1.16
